@@ -46,6 +46,18 @@ class TableEntry {
             out << "{" << te.key << " : " << te.value << "}";
             return out;
         }
+
+        // Operador Menor Que (<)
+        // Necesario para que el ABB pueda ordenar.
+        friend bool operator<(const TableEntry<V> &te1, const TableEntry<V> &te2) {
+            return te1.key < te2.key;
+        }
+
+        // Operador Mayor Que (>)
+        // Necesario para que el ABB pueda ordenar.
+        friend bool operator>(const TableEntry<V> &te1, const TableEntry<V> &te2) {
+            return te1.key > te2.key;
+        }
 };
 
 #endif
